@@ -2,6 +2,10 @@ const addButton = document.getElementById('add-book');
 const dialog = document.getElementById('dialog');
 const form = document.getElementById('form');
 
+const formBookName = document.getElementById('book-name');
+const formAuthorName = document.getElementById('book-author');
+const formPages = document.getElementById('number-of-pages'); 
+
 const myLibrary = [];
 
 let authorName = '';
@@ -13,22 +17,28 @@ addButton.addEventListener('click', () => {
     dialog.showModal();
 });
 
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    authorName = document.getElementById('book-author').value;
-    nameOfBook = document.getElementById('book-name').value; 
-    pages = document.getElementById('number-of-pages').value;
+    authorName = formAuthorName.value;
+    nameOfBook = formBookName.value;
+    pages = formPages.value;
 
     const newEntry = new Book(nameOfBook, authorName, pages);
+    myLibrary.push(newEntry);
+ 
+    formBookName.value = '';
+    formAuthorName.value = '';
+    formPages.value = '';
 
+});
 
-})
 
 function Book (bookName, bookAuthor, pages) {
     this.bookName = bookName;
     this.bookAuthor = bookAuthor;
     this.pages = pages;
 
-    console.log(this);
+    return;
 }
