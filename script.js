@@ -26,12 +26,12 @@ form.addEventListener('submit', (event) => {
     pages = formPages.value;
 
     const newEntry = new Book(nameOfBook, authorName, pages);
-    myLibrary.push(newEntry);
  
     formBookName.value = '';
     formAuthorName.value = '';
     formPages.value = '';
 
+    addBookToLibrary(newEntry); 
 });
 
 
@@ -42,3 +42,17 @@ function Book (bookName, bookAuthor, pages) {
 
     return;
 }
+
+
+function addBookToLibrary(newObject) {
+
+    myLibrary.push(newObject);
+
+    let indexedObjects = myLibrary.map((currentBookObject, index) => {
+        return { ...currentBookObject, index};
+    });
+
+    console.log(indexedObjects);
+
+
+} 
