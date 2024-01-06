@@ -10,6 +10,11 @@
 }
 
 
+#add-book:hover {
+    cursor: pointer;
+}
+
+
 body {
     height: 100vh;
     width: 100vw;
@@ -19,6 +24,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 12fr;
 }
+
 
 .book {
 
@@ -41,23 +47,6 @@ body {
     grid-template-rows: repeat(2, 1fr);
 }
 
-h4 {
-    align-self: center;
-    font-family: AvenirNext,sans-serif, system-ui;
-    font-size: 1.5rem;
-    font-weight: 600;
-    justify-self: start;
-
-}
-
-h5 {
-    align-self: start;
-    font-family: AvenirNext,sans-serif, system-ui;
-    font-size: 0.9rem;
-    font-weight: 600;
-    justify-self: start;
-
-}
 
 .book > h3,
 .book > div {
@@ -107,18 +96,57 @@ button {
 }
 
 
-h1 {
-    color: whitesmoke;
-    font-family: AvenirNext,sans-serif, system-ui;
-    font-size: 1.5rem;
-}
-
 #delete, .number, .pages, #status {
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
+
+dialog {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+form {
+    height: 350px;
+    padding: 10px 0px 0px 10px;
+    width: 300px;
+}
+
+
+.form-buttons button {
+    cursor: pointer;
+}
+
+.form-item > input {
+    height: 50px;
+    width: 250px;
+}
+
+
+.form-item {
+    margin-bottom: 20px;
+}
+
+
+.form-item > * {
+    display: block;
+}
+
+
+h1 {
+    color: whitesmoke;
+    font-family: AvenirNext,sans-serif, system-ui;
+    font-size: 1.5rem;
+}
 
 
 h3 {
@@ -128,6 +156,26 @@ h3 {
     font-style: normal;
     font-stretch: normal;
     color: #d6d4e5;
+}
+
+
+h4 {
+    align-self: center;
+    font-family: AvenirNext,sans-serif, system-ui;
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-self: start;
+
+}
+
+
+h5 {
+    align-self: start;
+    font-family: AvenirNext,sans-serif, system-ui;
+    font-size: 0.9rem;
+    font-weight: 600;
+    justify-self: start;
+
 }
 
 
@@ -163,6 +211,12 @@ h3 {
     display: flex;
     align-items: flex-end;
 }
+
+label {
+    font-family: AvenirNext,sans-serif, system-ui;
+    font-size: 0.8rem;
+}
+
 
 .main-content {
 
