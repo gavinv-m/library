@@ -22,9 +22,15 @@ addButton.addEventListener('click', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
+    if (!formBookName.value) {
+        return;
+    }
+
     authorName = formAuthorName.value;
     nameOfBook = formBookName.value;
     pages = formPages.value;
+
+    
 
     const newEntry = new Book(nameOfBook, authorName, pages);
  
