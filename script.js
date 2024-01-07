@@ -60,7 +60,11 @@ function addBookToLibrary(newObject) {
 
 function displayBooks(array) {
 
-    
+    let books = document.getElementsByClassName('book');
+
+    while (books.length > 0) {
+        library.removeChild(books[0]);
+    }
 
     array.forEach(element => {
          
