@@ -45,6 +45,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    padding-left: 10px;
 }
 
 
@@ -58,7 +59,9 @@ body {
 
 
     /* Items: */
+    align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -68,6 +71,8 @@ body {
     border: 1px solid #e5e7eb;
     border-radius: 10px;
     height: 80%;
+    overflow-y: scroll;
+    
     width: 80%;
 }
 
@@ -196,7 +201,9 @@ h5 {
     font-family: AvenirNext,sans-serif, system-ui;
     font-size: 0.75rem;
     height: 45px;
-    width: 100%;
+    width: 80%;
+
+    /* Positioning: */
 
     /* Items: */
     display: grid;
@@ -230,4 +237,19 @@ label {
 svg:hover {
     cursor: pointer;
     fill: red;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4648aa; 
 }

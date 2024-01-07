@@ -83,6 +83,7 @@ function displayBooks(array) {
         bookContainerDiv.appendChild(authorAndBook);
 
         const numberOfPages = document.createElement('h3');
+        numberOfPages.classList.add('pages');
         numberOfPages.textContent = pages;
         bookContainerDiv.appendChild(numberOfPages);
 
@@ -123,7 +124,7 @@ function createBookNumber(number) {
 
     const bookNumber = document.createElement('h3');
     bookNumber.classList.add('number');
-    bookNumber.textContent = number;
+    bookNumber.textContent = number + 1;
     
     return bookNumber;
 }
