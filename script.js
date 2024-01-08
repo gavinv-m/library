@@ -30,8 +30,6 @@ form.addEventListener('submit', (event) => {
     nameOfBook = formBookName.value;
     pages = formPages.value;
 
-    
-
     const newEntry = new Book(nameOfBook, authorName, pages);
  
     formBookName.value = '';
@@ -137,11 +135,23 @@ function createBookNumber(number) {
 function createCheckbox() {
 
     const status = document.createElement('div');
-    status.id = 'status';
+    status.classList.add('status');
 
     const checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
+
+    const paragraphStatus = document.createElement('p');
+    paragraphStatus.textContent = 'Not Read';
+    paragraphStatus.classList.add('paraStatus');
+
+    checkbox.addEventListener('change', () => {
+
+        paragraphStatus.textContent = (checkbox.checked) ?
+        'Read' : 'Not Read';
+    }); 
+
     status.appendChild(checkbox);
+    status.appendChild(paragraphStatus);
 
     return status;
 }

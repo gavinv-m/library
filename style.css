@@ -101,7 +101,7 @@ button {
 }
 
 
-.delete, .number, .pages, #status {
+.delete, .number, .pages, .status {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -234,20 +234,41 @@ label {
 }
 
 
+.paraStatus {
+    
+    font-family: AvenirNext,sans-serif, system-ui;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+.status {
+
+    /* Items: */
+    align-items: center;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 2fr 1fr; 
+}
+
+
 svg:hover {
     cursor: pointer;
     fill: red;
 }
+
 
 /* width */
 ::-webkit-scrollbar {
     width: 2px;
 }
 
+
   /* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1; 
 }
+
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
