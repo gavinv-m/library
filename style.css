@@ -101,7 +101,7 @@ button {
 }
 
 
-#delete, .number, .pages, #status {
+.delete, .number, .pages, #status {
     align-items: center;
     display: flex;
     justify-content: center;

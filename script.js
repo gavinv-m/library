@@ -7,7 +7,7 @@ const formAuthorName = document.getElementById('book-author');
 const formBookName = document.getElementById('book-name');
 const formPages = document.getElementById('number-of-pages'); 
 
-const myLibrary = [];
+let myLibrary = [];
 
 let authorName = '';
 let nameOfBook = '';
@@ -55,12 +55,11 @@ function addBookToLibrary(newObject) {
 
     myLibrary.push(newObject);
 
-    let indexedObjectsArray = myLibrary.map((currentBookObject, index) => {
+    myLibrary = myLibrary.map((currentBookObject, index) => {
         return { ...currentBookObject, index};
     });
-    console.log(indexedObjectsArray);
 
-    displayBooks(indexedObjectsArray);
+    displayBooks(myLibrary);
 }
 
 
@@ -96,14 +95,13 @@ function displayBooks(array) {
         let status = createCheckbox();
         bookContainerDiv.appendChild(status);
 
-        let deleteEntry = createDeleteIcon(); 
+        let deleteEntry = createDeleteIcon(index); 
         bookContainerDiv.appendChild(deleteEntry); 
 
         // Add entire book div to books-library
         library.appendChild(bookContainerDiv);
         
     });
-
     
 }
 
@@ -149,19 +147,19 @@ function createCheckbox() {
 }
 
 
-function createDeleteIcon() {
+function createDeleteIcon(index) {
 
     const deleteEntry = document.createElement('div');
-    deleteEntry.id = 'delete';
+    deleteEntry.classList.add('delete');
     
-    let svg = createSvg();
+    let svg = createSvg(index);
     deleteEntry.appendChild(svg);
 
     return deleteEntry;
 }
 
 
-function createSvg() {
+function createSvg(indexInArray) {
     // Create the SVG element
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('id', 'Isolation_Mode');
@@ -169,6 +167,12 @@ function createSvg() {
     svg.setAttribute('viewBox', '0 0 24 24');
     svg.setAttribute('width', '20');
     svg.setAttribute('height', '20');
+    svg.dataset.value = indexInArray;
+
+    svg.addEventListener('click', () => {
+
+        removeFromDisplay(indexInArray);
+    });
 
     // Create the path element and set its attribute
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -192,5 +196,19 @@ function createSvg() {
     svg.appendChild(rect1);
     svg.appendChild(rect2);
 
+    
+
     return svg; 
+}
+
+
+function removeFromDisplay(indexInArray) {
+    
+    myLibrary.splice(indexInArray, 1);
+
+    myLibrary = myLibrary.map((currentBookObject, index) => {
+        return { ...currentBookObject, index};
+    });
+
+    displayBooks(myLibrary);
 }
