@@ -40,12 +40,14 @@ form.addEventListener('submit', (event) => {
 });
 
 
-function Book (bookName, bookAuthor, pages) {
-    this.bookName = bookName;
-    this.bookAuthor = bookAuthor;
-    this.pages = pages;
+class Book {
 
-    return;
+    constructor(bookName, bookAuthor, pages) {
+
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+        this.pages = pages;
+    }
 }
 
 
