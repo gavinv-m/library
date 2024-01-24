@@ -28,16 +28,11 @@ body {
 
 .book {
 
-    /* background-color: darkgreen; */
     border-radius: 10px;
     height: 20%;
     margin-top: 5px;
     width: 100%;
-    min-width: 100%;
-
-    /* Items: */
-    display: grid;
-    grid-template-columns: 1fr 5fr repeat(3, 1fr);
+ 
 }
 
 
@@ -51,9 +46,9 @@ body {
 }
 
 
-.book > h3,
-.book > div {
+.book > * {
     border: 1px solid #e5e7eb;
+    height: 20%;
 }
 
 
@@ -63,19 +58,16 @@ body {
     /* Items: */
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
 
 .books-library {
-    /* background-color: aqua; */
     border: 1px solid #e5e7eb;
     border-radius: 10px;
-    height: 80%;
-    overflow-y: scroll;
-    
-    width: 80%;
+    height: 90%;
+    /* overflow-y: scroll; */
+    width: 100%;
 }
 
 
@@ -104,9 +96,9 @@ button {
 
 
 .delete, .number, .pages, .status {
-    align-items: center;
+    /* align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
 }
 
 
@@ -202,24 +194,19 @@ h5 {
     color: white;
     font-family: AvenirNext,sans-serif, system-ui;
     font-size: 0.75rem;
-    height: 45px;
-    width: 80%;
-
-    /* Positioning: */
-
-    /* Items: */
-    display: grid;
-    grid-template-columns: 1fr 5fr repeat(3, 1fr);
 }
 
 
-.headings > h2 {
+.headings > * {
     border: 1px solid #e5e7eb;
-
-    /* Items */
-    display: flex;
-    align-items: flex-end;
+    width: 12.5%;
 }
+
+
+.headings > th:nth-child(2) {
+    width: 50%;
+}
+
 
 label {
     font-family: AvenirNext,sans-serif, system-ui;
@@ -277,11 +264,14 @@ svg:hover {
     background: #4648aa; 
 }
 
+table {
+    border-collapse: collapse;
+    height: 80%;
+    width: 80%;
+}
 
-@media screen and (max-width: 300px) {
-    .books,
-    .headings {
-      grid-template-columns: repeat(5, 1fr);
-    }
-  }
-  
+
+thead {
+    height: 10%;
+    width: 100%;
+}
